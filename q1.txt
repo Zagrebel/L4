@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "");
+	int p;
+	cout << " Введите количество человек посетивших спорт зал: ";
+	cin >> p;
+	int age;
+	int maxA = 0; // максимальный возраст
+	int minA = 100; // минимальный возраст
+	int s = 0; //общая сумма для расчёта среднего
+	int cr = 0; // среднего возраста 
+	for (int i = 0; i < p; i++)
+	{
+		cout << " Введите возраст " << i + 1 << " посетителя: ";
+		cin >> age;
+		if (age > maxA)
+			maxA = age;
+		if (age < minA)
+			minA = age;
+		s += age;
+	}
+	cr = s / p;
+	cout << " Средний возраст всех посетителей: " << cr << endl;
+	cout << " Самый большой возраст посетителя: " << maxA << endl;
+	cout << " Самый маленький возраст посетителя: " << minA << endl;
+	return 0;
+}
